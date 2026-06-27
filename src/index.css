@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* استایل نوار اسکرول سفارشی آبی رنگ */
+.custom-scrollbar::-webkit-scrollbar {
+  height: 5px; /* ضخامت نوار اسکرول افقی */
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #e5e7eb; /* رنگ پس‌زمینه (خاکستری خیلی روشن) */
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #2b4eff; /* رنگ آبی تم سایت! */
+  border-radius: 10px;
+}
+/* استایل‌های اختصاصی اسلایدر قیمت */
+.rc-slider-rail {
+  background-color: #e5e7eb !important;
+  height: 6px !important;
+  border-radius: 10px !important;
+}
+.rc-slider-track {
+  background-color: #2b4eff !important;
+  height: 6px !important;
+}
+.rc-slider-handle {
+  border: solid 3px #2b4eff !important;
+  background-color: white !important;
+  width: 20px !important;
+  height: 20px !important;
+  margin-top: -7px !important;
+  opacity: 1 !important;
+  box-shadow: 0 0 0 4px #f0f4ff !important;
+}
+.rc-slider-handle:active,
+.rc-slider-handle:hover {
+  box-shadow: 0 0 0 6px #dbeafe !important;
+  cursor: grab !important;
+}
+/* استایل حباب قیمت که بالای دستگیره ظاهر می‌شود */
+.rc-slider-tooltip {
+  background-color: #2b4eff !important;
+  color: white !important;
+  border-radius: 30px !important;
+  padding: 6px 12px !important;
+  font-weight: bold !important;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+}
+.rc-slider-tooltip::after {
+  border-top-color: #2b4eff !important;
+}
+@import "leaflet/dist/leaflet.css";
