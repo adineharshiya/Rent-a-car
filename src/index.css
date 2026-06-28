@@ -51,4 +51,10 @@
 .rc-slider-tooltip::after {
   border-top-color: #2b4eff !important;
 }
+/* رفع هشدارهای قدیمی Leaflet در مرورگرهای مدرن (کروم، اج) */
+.leaflet-overlay-pane svg {
+  -moz-user-select: none !important;
+  -webkit-user-select: none !important;
+  user-select: none !important;
+}
 @import "leaflet/dist/leaflet.css";

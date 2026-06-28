@@ -10,7 +10,8 @@ import CheckoutPage from "./Checkout";
 import PaymentPage from "./Payment";
 import MyRentalsPage from "./MyRentals";
 import RentalDetailsPage from "./RentalDetailsPage";
-import AccountPage from "./AccountPage"; // 1. ایمپورت صفحه اکانت اضافه شد
+import BranchesPage from "./BranchesPage";
+import AccountPage from "./AccountPage";
 import BottomNav from "./BottomNav";
 
 const categoriesData = [
@@ -564,14 +565,20 @@ function App() {
   const handleGoToMyRentals = () => setView("my-rentals");
   const handleBackFromMyRentals = () => setView("home");
 
-  // 2. هندلرهای جدید برای صفحه Account
+  // هندلرهای جدید برای صفحه Branches
+  const handleGoToBranches = () => setView("branches");
+  const handleBackFromBranches = () => setView("home");
+
+  // هندلرهای جدید برای صفحه Account
   const handleBackFromAccount = () => setView("home");
   const handleLogout = () => setView("login");
 
   const handleTabChange = (tab) => {
     if (tab === "home") setView("home");
     else if (tab === "my-rentals") setView("my-rentals");
-    else if (tab === "account") setView("account"); // 3. اضافه شدن حالت Account
+    else if (tab === "branches")
+      setView("branches"); // اضافه شد
+    else if (tab === "account") setView("account");
   };
 
   const isCarWishlisted = (car) => wishlistedCars.some((c) => c.id === car.id);
@@ -797,7 +804,19 @@ function App() {
                 />
               </motion.div>
             )}
-            {/* 4. بخش جدید برای صفحه Account */}
+            {view === "branches" && (
+              <motion.div
+                key="branches"
+                variants={pageVariants}
+                initial="initial"
+                animate="animate"
+                exit="exit"
+                transition={{ duration: 0.3, ease: "easeInOut" }}
+                className="w-full h-full"
+              >
+                <BranchesPage onBack={handleBackFromBranches} />
+              </motion.div>
+            )}
             {view === "account" && (
               <motion.div
                 key="account"

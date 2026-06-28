@@ -26,8 +26,10 @@ export default function BottomNav({ activeTab, onTabChange }) {
 
       {/* دکمه Branches */}
       <div
-        onClick={() => alert("Branches page coming soon!")}
-        className="flex flex-col items-center gap-1 text-gray-400 cursor-pointer group"
+        onClick={() => onTabChange("branches")}
+        className={`flex flex-col items-center gap-1 cursor-pointer transition-colors group ${
+          activeTab === "branches" ? "text-[#2b4eff]" : "text-gray-400"
+        }`}
       >
         <svg
           className="w-6 h-6 group-hover:scale-110 transition-transform"
